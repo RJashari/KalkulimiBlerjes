@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>BpB - Forma për te shtuar shfrytëzues</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link th:href="@{/loginStyle.css}" rel="stylesheet" type="text/css"/>
+<link th:href="@{/styles.css}" rel="stylesheet" type="text/css"/>
+<link rel="icon" 
+      type="image/png" 
+      th:href="@{bpbIcon1.png}" />
+</head>
+<body style="background-color: #eaeaea">
+
+
+
+<form th:object="${user}" method="post" th:action="@{/users/add}">
+  
+
+    <div class="container">
+
+
+<!--        <div class="imgcontainer">
+            <img th:src="@{bpblogo.png}" alt="BpB Logo" class="avatar"/>       
+        </div>-->
+
+        <h2>Shto Blerje</h2>
+        <label class="pytjaLabel" for="kampanja"><b>Materiali</b></label>
+         <select id="materiali" name="materiali"> 
+            <option id="hekur" value="hekur">Hekur</option>
+            <option id="llamarine" value="llamarine">Llamarinë</option>
+            <option id="alumin" value="alumin">Alumin</option>
+            <option id="kanaqe" value="kanaqe">Kanaqe</option>
+            <option id="baker" value="baker">Bakër</option>
+            <option id="bateri" value="bateri">Bateri</option>
+            <option id="plumb" value="plumb">Plumb</option>
+            <option id="mesing" value="mesing">Mesing</option>
+            <option id="kablo" value="kablo">Kablo</option>
+            <option id="rostfraj" value="rostfraj">Rostfraj</option>
+        </select>
+
+        <label><b>Çmimii</b></label>
+        <input th:value="${user.email}" type="text" id="cmimi" name="cmimi"  placeholder="Cmimi.." required="required"/>
+
+        <label><b>Sasia (Kg)</b></label>
+        <input th:value="${user.email}" type="text" id="sasia" name="sasia"  placeholder="Sasia.." required="required"/>
+            
+
+         <input type="submit" value="Submit"/>
+    </div>
+
+</form>
+</body>
+</html>
+
+
